@@ -1,0 +1,106 @@
+#include <pedalera24_V0.h>
+
+//CALIBRAR APPS// (SI ALGÚN VALOR SE PASA, SUBIR EL "XXUP")
+#define A1UP 225
+#define A1DOWN 9
+
+#define A2UP 200
+#define A2DOWN 0
+
+#define A3UP 155
+#define A3DOWN 40
+
+//CALIBRAR BRK//
+
+#define BRKUP 95
+#define BRKDOWN 23
+
+//CALIBRAR REGEN//
+
+#define REGUP 255
+#define REGDOWN 5
+
+
+#define CAN_USE_EXTENDED_ID FALSE
+#define CAN_DO_DEBUG FALSE
+#define CAN_BRG_SEG_2_PHASE_TS TRUE  
+#define CAN_BRG_PRESCALAR 1 
+#define CAN_BRG_SYNCH_JUMP_WIDTH 2 
+#define CAN_BRG_PROPAGATION_TIME 0 
+#define CAN_BRG_PHASE_SEGMENT_1 4 
+#define CAN_BRG_PHASE_SEGMENT_2 2 
+#define CAN_BRG_WAKE_FILTER TRUE 
+#define CAN_BRG_SAM FALSE 
+
+#include <can-18F2580.c>
+
+
+#define CAN_ID_PEDAL_BOARD  0x01 // board CAN ID
+#define CAN_ID_PEDAL_CALIB  0x02 // board CAN ID
+#define CAN_ID_CONDICION  0x03    // ID que debe recibirse antes de enviar por can la ID 2
+#define CAN_PRIORITY 0x11 // max priority
+#define CAN_BUFFER_LENGTH 8 // set buffer to be sent by CAN
+
+#define VENTANA 5   //TamaÃ±o de la ventana de la media movil
+#define MAX_IGNORE_VALUE 250
+
+const int16 TIME_INTERVAL_1MS = 65459;
+
+// Each 1ms interrupt
+/*#int_RTCC
+void RTCC_isr(void) {
+    counter++;
+    
+    if (counter >= 5) {
+        // each 5 ms
+        counter    = 0;
+        readAdc    = 1;
+    }
+}*/
+
+void main()
+{
+    unsigned int8 buffer[8] = {0};
+
+    set_tris_b(0b00001000); // set CANRX as input and CANTX as output
+    setup_adc(ADC_CLOCK_INTERNAL);
+    setup_spi(SPI_SS_DISABLED);
+    //setup_wdt(WDT_OFF);
+    
+    can_init();
+    // Do not listen to any ID
+      
+
+      
+    // Configuración de Filtro para el Buffer 1
+
+    can_set_mode(CAN_OP_NORMAL);
+    
+    enable_interrupts(GLOBAL);
+    //enable_interrupts(INT_TIMER0); 
+
+    SET_TIMER0(TIME_INTERVAL_1MS); //
+   
+    delay_ms(2000);//un poquillo de delay
+    
+    while(TRUE)
+    {
+         
+         //restart enable to read Adc channels
+         //readAdc = 0;
+      
+         buffer[0] = 1;
+         buffer[1] = 1;
+         buffer[2] = 1;
+         buffer[3] = 1;
+         buffer[4] = 1;
+         buffer[5] = 1;
+         can_putd(CAN_ID_PEDAL_BOARD,buffer,CAN_BUFFER_LENGTH,CAN_PRIORITY,false,false);
+         output_toggle(PIN_C4);
+         
+         // Si se ha recibido el mensaje con ID 3 antes, enviamos el mensaje con ID 5
+         
+         delay_ms(10);
+   }
+
+}
