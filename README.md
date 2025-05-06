@@ -2,7 +2,9 @@
 
 git config --global user.name "Tu Nombre de Git"
 git config --global user.email "tu@email.com de Git"
-----------------------------------------------------------------------
+
+--------------------------------------------------------
+
 ## Claves SSH ##
 
 # Inciar agente SSH
