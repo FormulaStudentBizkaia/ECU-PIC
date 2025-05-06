@@ -3,7 +3,7 @@
 //CALIBRAR APPS// (SI ALGÚN VALOR SE PASA, SUBIR EL "XXUP")
 #define A1UP 225
 #define A1DOWN 9
-
+//
 #define A2UP 200
 #define A2DOWN 0
 
@@ -54,7 +54,7 @@ unsigned int8 avgA3 = 0;
 unsigned int8 avgBrk = 0;
 unsigned int8 avgSens = 0;
 int1 received_id3 = FALSE;  // Variable para saber si se recibió un mensaje de ID 3
-
+//pruebaGitAnoni
 // Each 1ms interrupt
 /*#int_RTCC
 void RTCC_isr(void) {
