@@ -1,9 +1,9 @@
 #include <pedalera24_V0.h>
 
-//CALIBRAR APPS// (SI ALGÚN VALOR SE PASA, SUBIR EL "XXUP")
+//CALIBRAR APPS// (SI ALGÃšN VALOR SE PASA, SUBIR EL "XXUP")
 #define A1UP 225
 #define A1DOWN 9
-//
+//asdasdasd
 #define A2UP 200
 #define A2DOWN 0
 
@@ -44,7 +44,7 @@
 #define CAN_PRIORITY 0x11 // max priority
 #define CAN_BUFFER_LENGTH 8 // set buffer to be sent by CAN
 
-#define VENTANA 5   //TamaÃ±o de la ventana de la media movil
+#define VENTANA 5   //TamaÃƒÂ±o de la ventana de la media movil
 #define MAX_IGNORE_VALUE 250
 
 const int16 TIME_INTERVAL_1MS = 65459;
@@ -53,7 +53,7 @@ unsigned int8 avgA2 = 0;
 unsigned int8 avgA3 = 0;
 unsigned int8 avgBrk = 0;
 unsigned int8 avgSens = 0;
-int1 received_id3 = FALSE;  // Variable para saber si se recibió un mensaje de ID 3
+int1 received_id3 = FALSE;  // Variable para saber si se recibiÃ³ un mensaje de ID 3
 //pruebaGitAnoni
 // Each 1ms interrupt
 /*#int_RTCC
@@ -94,7 +94,7 @@ unsigned int8 media_movil (unsigned int16 data){
    return filtered_data;
 }
 
-// Función de interrupción para recibir mensajes CAN
+// FunciÃ³n de interrupciÃ³n para recibir mensajes CAN
 #int_canrx0
 void canrx0_int(void) {
    
@@ -119,7 +119,7 @@ void canrx0_int(void) {
         bufferCalib[3] = 1;
         bufferCalib[4] = 1;
         can_putd(CAN_ID_PEDAL_CALIB, bufferCalib, CAN_BUFFER_LENGTH, CAN_PRIORITY, false, false);
-        received_id3 = 0; // Reseteamos la variable después de enviar el mensaje
+        received_id3 = 0; // Reseteamos la variable despuÃ©s de enviar el mensaje
     }
     enable_interrupts(GLOBAL);
     enable_interrupts(int_canrx0);
@@ -149,19 +149,19 @@ void main()
     can_init();
     // Do not listen to any ID
     can_set_mode(CAN_OP_CONFIG);
-    can_set_id((unsigned int *)RX0MASK, 0x7FF, 0); // Máscara 0 configura todos los bits como relevantes
+    can_set_id((unsigned int *)RX0MASK, 0x7FF, 0); // MÃ¡scara 0 configura todos los bits como relevantes
       
-    // Configuración de Filtros para el Buffer 0
+    // ConfiguraciÃ³n de Filtros para el Buffer 0
     can_set_id((unsigned int *)RX0FILTER0, 0x03, 0); // Filtro 0 del buffer 0 para la ID 311
       
 
       
-    // Configuración de Filtro para el Buffer 1
+    // ConfiguraciÃ³n de Filtro para el Buffer 1
 
     can_set_mode(CAN_OP_NORMAL);
     
     enable_interrupts(GLOBAL);
-    enable_interrupts(int_canrx0); // Habilita la interrupción de recepción CAN
+    enable_interrupts(int_canrx0); // Habilita la interrupciÃ³n de recepciÃ³n CAN
     enable_interrupts(INT_TIMER0); 
 
     SET_TIMER0(TIME_INTERVAL_1MS); //
