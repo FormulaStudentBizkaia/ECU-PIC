@@ -96,3 +96,17 @@ git pull origin main
 ``` bash
 git push origin main
 ```
+
+## Posibles errores
+
+"""
+Si no te deja hacer "git clone linkSSH" vuelve a ejecutar los siguiente comandos
+"""
+
+``` bash
+eval "$(ssh-agent -s)"
+```
+
+``` bash
+ssh-add ~/.ssh/clavePrivada
+```
