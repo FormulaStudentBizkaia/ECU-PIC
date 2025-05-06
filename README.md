@@ -1,48 +1,97 @@
-# INICIALIZACIÓN DE GIT
+# Programa del PIC de la ECU
 
-git config --global user.name "Tu Nombre de Git"
+## Descripción
 
-git config --global user.email "tu@email.com de Git"
+"""
+Este programa se encarga de escuchar la linea de CAN de los inversores (1M) para que la ECU pueda levantar.
+"""
 
-# Claves SSH
+## Comando para crear claves SSH
 
-# Inciar agente SSH
+1) Inciar agente SSH
+``` bash
 eval "$(ssh-agent -s)"
+```
 
-# Moverse al directorio correctopara crear la clave
+2) Moverse al directorio correctopara crear la clave
+``` bash
 cd ~/.ssh
+```
 
-# Crear clave ssh
+3) Crear clave ssh
+``` bash
 ssh-keygen
+```
 
-# Añadir la clave privada como identificador del dispositivo
-ssh-add ~/.ssh/id_ed25519
+4) Introducir nombre de la clave
+"""
+Se crearan dos claves, una publica y una privada.
+Ej: 
+miclave (privada)
+miClave.pub (pública)
+"""
 
-# Imprimir la clave pública
+4) Añadir la clave privada como identificador del dispositivo
+``` bash
+ssh-add ~/.ssh/clavePrivada
+```
+
+5) Imprimir la clave pública
+``` bash
 cat ~/.ssh/clavePublica.pub
+```
 
-# Copiar calve y meter en el usuario de gitHub
+6) Copiar calve y meter en el usuario de gitHub
+"""
 Perfil >> SSH and GPG Keys >> New SSH key >> Add SSH key
+"""
 
-# Comandos git
+## Comandos para Git
 
-# Clonar un repositorio 
+7) Identificarte con nombre de usuario y email
+
+``` bash
+git config --global user.name "Tu Nombre de Git"
+```
+
+``` bash
+git config --global user.email "tu@email.com de Git"
+```
+
+8) Clonar un repositorio 
+``` bash
 git clone url_SSH
+```
 
-# Cambiarse de rama
+9) Cambiarse de rama
+``` bash
 git checkout main
+```
 
-# Entrar en nuestro proyecto del repositorio
+10) Entrar en nuestro proyecto del repositorio
+``` bash
 cd myproject
+```
 
-# Añadir cambios
+11) Añadir cambios
+"""
+El punto indica los todos los archivos dentro de la carpeta en la que estas, se puede sustituir por un unico archivo también
+"""
+``` bash
 git add .
+```
 
-# Hacer commit
+12) Hacer commit
+``` bash
 git commit -m "Bug arreglado"
+```
 
-# Hacer pull a una rama
+13) Hacer pull a una rama
+``` bash
 git pull origin main
+```
 
-# Hacer push a una rama
+14) Hacer push a una rama
+``` bash
 git push origin main
+```
