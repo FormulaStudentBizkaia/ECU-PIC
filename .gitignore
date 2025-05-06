@@ -1,7 +1,5 @@
-
-
 # PIC C COMPILER
-*.ccspjt
+#*.ccspjt
 *.cof
 *.err
 *.esym
