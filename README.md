@@ -100,7 +100,7 @@ git push origin main
 ## Posibles errores
 
 """
-Si no te deja hacer "git clone linkSSH" vuelve a ejecutar los siguiente comandos
+Si no te deja acceder al proyecto de gitHub (git clone, git pull...) vuelve a ejecutar los siguiente comandos
 """
 
 ``` bash
