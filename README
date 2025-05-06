@@ -1,3 +1,4 @@
+git init
 git checkout main
 cd myproject
 git add .
