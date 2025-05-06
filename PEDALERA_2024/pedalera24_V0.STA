@@ -1,0 +1,58 @@
+
+ROM used:   4040/32768 (12%)
+            4040/32768 (12%) including unused fragments
+
+            1.0 Average locations per line
+            6.4 Average locations per statement
+
+RAM used:   86/1536 (6%) at main() level
+            162/1536 (11%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  202    67  11  pedalera24_V0.c
+   28     0   0  pedalera24_V0.h
+  777     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F2580.h
+ 2053   563  89  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\can-18F4580.c
+ 1022     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\can-18f4580.h
+----- -----
+ 4082   630 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38   0    1             @delay_ms1
+0    638   8    1   2743  7.4  can_init
+0     46   1    0    255  2.3  can_set_baud
+0     34   0    2     88  3.6  can_set_mode
+0    296   4   11   1068  6.4  can_set_id
+0    480   6   14    762  9.7  can_get_id
+0    450   6   17   2592  9.3  can_putd
+ Inline        14   6010 10.9  can_getd
+0    864  11   26    808  4.1  canrx0_int
+0   1024  13   52   1771  4.9  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               9
+    Statements              630
+    Comments                1789
+    Volume (V)              22061
+    Difficulty (D)          58.6
+    Effort to implement (E) 1291864
+    Time to implement (T)   19 hours, 56 minutes
+    Est Delivered Bugs (B)  4
+    Cyclomatic Complexity   44
+    Maintainability (MI)    68
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE  3870  28724  
+
+
+
