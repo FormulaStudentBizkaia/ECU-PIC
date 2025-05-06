@@ -1,5 +1,13 @@
 
-PEDALERA_2024/
-# Excepto los archivos fuente .c y .h
-*.c
-*.h
+
+# PIC C COMPILER
+*.ccspjt
+*.cof
+*.err
+*.esym
+*.hex
+*.lts
+*.STA
+*.sym
+*.tre
+*.xsym
