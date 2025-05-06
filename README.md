@@ -1,10 +1,10 @@
-## INICIALIZACIÓN DE GIT ##
+# INICIALIZACIÓN DE GIT
 
 git config --global user.name "Tu Nombre de Git"
 
 git config --global user.email "tu@email.com de Git"
 
-## Claves SSH ##
+# Claves SSH
 
 # Inciar agente SSH
 eval "$(ssh-agent -s)"
@@ -21,13 +21,17 @@ ssh-add ~/.ssh/id_ed25519
 # Imprimir la clave pública
 cat ~/.ssh/clavePublica.pub
 
-#copiar calve y meter en el usuario de gitHub
+# Copiar calve y meter en el usuario de gitHub
 Perfil >> SSH and GPG Keys >> New SSH key >> Add SSH key
-----------------------------------------------------------------------
-## Comandos git ##
-git clone
+
+# Comandos git
+
+# Clonar un repositorio 
+git clone url_SSH
+
 # Cambiarse de rama
 git checkout main
+
 # Entrar en nuestro proyecto del repositorio
 cd myproject
 
