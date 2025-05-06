@@ -1,0 +1,41 @@
+ÀÄpedalera24_V0
+   ÃÄMAIN  0/1024  Ram=52
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@cinit2  (Inline)  Ram=0
+   ³  ÃÄcan_init  0/638  Ram=1
+   ³  ³  ÃÄcan_set_mode  0/34  Ram=2
+   ³  ³  ÃÄcan_set_baud  0/46  Ram=0
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ³  ÀÄcan_set_mode  0/34  Ram=2
+   ³  ÃÄcan_set_mode  0/34  Ram=2
+   ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ÃÄcan_set_id  0/296  Ram=11
+   ³  ÃÄcan_set_mode  0/34  Ram=2
+   ³  ÃÄ@delay_ms1  0/38  Ram=1
+   ³  ÃÄcan_getd  (Inline)  Ram=14
+   ³  ³  ÀÄcan_get_id  0/480  Ram=14
+   ³  ÃÄcan_putd  0/450  Ram=17
+   ³  ³  ÀÄcan_set_id  0/296  Ram=11
+   ³  ÀÄ@delay_ms1  0/38  Ram=1
+   ÀÄcanrx0_int  0/864  Ram=26
+      ÃÄcan_getd  (Inline)  Ram=14
+      ³  ÀÄ*
+      ÀÄcan_putd  0/450  Ram=17
+         ÀÄ*
