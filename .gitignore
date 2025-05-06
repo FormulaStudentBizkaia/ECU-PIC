@@ -6,7 +6,7 @@
 *.err
 *.esym
 *.hex
-*.lts
+*.lst
 *.STA
 *.sym
 *.tre
