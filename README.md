@@ -3,7 +3,7 @@
 ## Descripción
 
 """
-Este programa se encarga de escuchar la linea de CAN de los inversores (1M) para que la ECU pueda levantar.
+Este programa se encarga de escuchar la linea de CAN de los inversores (1M) para que la ECU pueda levantar
 """
 
 ## Comando para crear claves SSH
