@@ -1,9 +1,0 @@
-# No ignorar el archivo .gitignore
-!.gitignore
-
-# Ignorar todo por defecto
-*
-
-# Excepto los archivos fuente .c y .h
-!*.c
-!*.h
