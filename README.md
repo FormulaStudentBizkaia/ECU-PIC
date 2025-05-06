@@ -74,6 +74,7 @@ cd myproject
 ```
 
 11) Añadir cambios
+
 """
 El punto indica los todos los archivos dentro de la carpeta en la que estas, se puede sustituir por un unico archivo también
 """
