@@ -1,0 +1,6 @@
+git checkout main
+cd myproject
+git add .
+git commit -m "Bug arreglado"
+git pull origin main
+git push origin main
